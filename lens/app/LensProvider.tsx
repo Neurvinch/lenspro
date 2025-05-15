@@ -6,12 +6,14 @@ import { LensProvider as Provider } from '@lens-protocol/react-web'
 const lensConfig: LensConfig = {
   bindings: wagmiBindings(),
   environment: production,
+  // Add this if you're using publications
+  publicationTypes: ['ARTICLE_LATEST']
 }
 
 export function LensProvider({ children }) {
   return (
     <Provider config={lensConfig}>
-      { children }
+      {children}
     </Provider>
   )
 }
